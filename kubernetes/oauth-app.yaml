@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: oauth2-app
-        image: oauth2-app-tilt
+        image: aabedraba/oauth-app:v0.1.0
         ports:
         - containerPort: 3000
 ---
