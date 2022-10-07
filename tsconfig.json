@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ESNext",                                 
-    "jsx": "preserve", 
+    "target": "ESNext",
+    "jsx": "preserve",
     "module": "commonjs",
     "rootDir": "./src",
     "moduleResolution": "node",
@@ -16,10 +16,10 @@
       "esnext"
     ],
     "allowJs": true,
-    "resolveJsonModule": false,
+    "resolveJsonModule": true,
     "isolatedModules": true,
     "incremental": true,
-    "noEmit": false
+    "noEmit": true
   },
   "include": [
     "next-env.d.ts",
