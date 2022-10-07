@@ -1,0 +1,36 @@
+openapi: 3.0.0
+info:
+  title: oauth2-example
+  description: oauth2-example
+  version: '0.1.0'
+x-kusk:
+  upstream:
+    service:
+      name: oauth2-app-svc
+      namespace: default 
+      port: 3000
+  auth:
+    scheme: oauth2
+    oauth2:
+      token_endpoint: https://aabedraba.eu.auth0.com/oauth/token
+      authorization_endpoint: https://aabedraba.eu.auth0.com/authorize
+      credentials:
+        client_id: vEZT09ShdFO4iHCu0HCmMqy71pB2orzQ
+        client_secret: CoDszWd0M3A2z4ITi8yV4SCfAixulnMAc07C6Dm4Fb1ZMqy-mrcEd_zcjDH77aTJ
+      redirect_uri: /oauth2/callback
+      redirect_path_matcher: /oauth2/callback
+      signout_path: /oauth2/signout
+      forward_bearer_token: true
+      auth_scopes:
+        - openid
+        - profile
+        - email
+paths:
+  "/":
+    get:
+      description: Returns GET data.
+      responses:
+        200:
+          content: 
+            text/plain:
+              example: Hello from a mocked response
