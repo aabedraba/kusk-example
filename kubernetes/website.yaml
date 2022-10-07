@@ -2,12 +2,12 @@ openapi: 3.0.0
 info:
   title: oauth2-example
   description: oauth2-example
-  version: '0.1.0'
+  version: "0.1.0"
 x-kusk:
   upstream:
     service:
       name: oauth2-app-svc
-      namespace: default 
+      namespace: default
       port: 3000
   auth:
     scheme: oauth2
@@ -31,6 +31,12 @@ paths:
       description: Returns GET data.
       responses:
         200:
-          content: 
-            text/plain:
-              example: Hello from a mocked response
+          content:
+            text/html:
+  /login:
+    get:
+      description: Returns GET data.
+      responses:
+        200:
+          content:
+            text/html:

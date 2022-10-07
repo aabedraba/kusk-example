@@ -1,6 +1,7 @@
-import { GetServerSideProps } from "next";
+import React from "react";
 import { useEffect, useState } from "react";
 import { getCookie } from "cookies-next";
+import { Layout } from "../components/Layout";
 
 type UserInfo = {
   email: string;
@@ -14,7 +15,7 @@ type UserInfo = {
   updated_at: string;
 };
 
-const Index = () => {
+const Login = () => {
   const [userInfo, setUserInfo] = useState<UserInfo | null>(null);
 
   useEffect(() => {
@@ -38,22 +39,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div>
-      {userInfo ? (
-        <pre className="flex">{JSON.stringify(userInfo, null, 2)}</pre>
-      ) : (
-        <button>Logged in</button>
+    <Layout>
+      {userInfo && (
+        <div className="space-y-5 p-5 bg-green-100">
+          <img src={userInfo.picture} />
+          <pre>{JSON.stringify(userInfo, null, 2)}</pre>
+        </div>
       )}
-    </div>
+    </Layout>
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
-  return {
-    props: {
-      userLoggedIn: false,
-    },
-  };
-};
-
-export default Index;
+export default Login;

@@ -2,7 +2,7 @@ import React from "react";
 
 const Logo = () => (
   <img
-    src="/kusk-logo.svg"
+    src="https://dashboard.kusk.io/static/media/KuskLogo.2ce793db05884c7fae220394f72d79bf.svg"
     className="inline"
     style={{
       maxWidth: "50px",
@@ -30,7 +30,8 @@ export const Layout = ({ children }) => {
   return (
     <div>
       <Header />
-      {children}
+      <h1 className="text-2xl font-bold p-5">Kusk OAuth Demo</h1>
+      <div className="p-5">{children}</div>
     </div>
   );
 };
